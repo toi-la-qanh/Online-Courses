@@ -1,0 +1,170 @@
+.body-profile {
+  padding: 20px;
+}
+.body-profile .title {
+  display: flex;
+  text-align: left;
+  color: #72bcd4;
+  font-size: x-large;
+  font-weight: 700;
+  margin-left: 10px;
+  margin-top: 50px;
+}
+.body-profile .profile {
+  /* margin-top: 50px; */
+  padding: 30px;
+}
+.body-profile .profile .row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.body-profile .profile .row .column {
+  flex: 1 1 250px;
+}
+.body-profile .profile .row .column .image {
+  width: 70%;
+  height: auto;
+}
+.body-profile .profile .row .column .image img {
+  width: 100%;
+  aspect-ratio: 1.1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #72bcd4;
+}
+.body-profile .profile .row .column .image img::after {
+  content: "";
+  padding-bottom: 100%;
+}
+.body-payment .form-payment .row .column .title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #72bcd4;
+}
+.body-profile .profile .row .column .input-box {
+  margin: 15px 0;
+  font-size: 20px;
+  /* line-height: 70px; */
+}
+.body-profile .profile .row .column .input-box input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.body-profile .profile .row .column .input-box span {
+  margin-bottom: 10px;
+}
+.body-profile .profile .row .column .edit-button {
+  width: 100%;
+  background-color: #72bcd4;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  height: 30px;
+  font-weight: bold;
+}
+.body-profile .profile .row .column .edit-button:hover {
+  background-color: gray;
+}
+.body-profile .profile .row .column .after-edit {
+  width: 100%;
+  display: flex;
+}
+.body-profile .profile .row .column .save-button {
+  display: none;
+  width: 50%;
+  background-color: #72bcd4;
+  color: white;
+  border: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  height: 30px;
+  font-weight: bold;
+}
+.body-profile .profile .row .column .save-button:hover {
+  background-color: gray;
+}
+.body-profile .profile .row .column .cancel-button {
+  display: none;
+  width: 50%;
+  color: #72bcd4;
+  background-color: inherit;
+  border: 1px solid #72bcd4;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  height: 30px;
+  font-weight: bold;
+}
+.body-profile .profile .row .column .cancel-button:hover {
+  background-color: gray;
+  color: white;
+}
+.return-button {
+  display: flex;
+  position: fixed;
+  /* z-index: -1; */
+  justify-content: space-between;
+  padding-left: 2px;
+  padding-right: 5px;
+  align-items: center;
+  top: 100px;
+  color: white;
+  background-color: #72bcd4;
+  border: 0;
+  border-radius: 10px;
+  width: 140px;
+  height: 30px;
+  font-weight: 700;
+}
+.return-button:hover {
+  background-color: gray;
+}
+.purchasedCourses {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+/* .purchasedCourses .title{
+
+} */
+.purchasedCourses .image-container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: #d5d5d5;
+}
+.purchasedCourses .image-container img {
+  align-items: center;
+  width: 170px;
+  height: 170px;
+  min-height: 130px;
+}
+.purchasedCourses .image-container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  /* max-height: 200px; */
+  /* justify-content: center; */
+}
+.purchasedCourses .image-container a {
+  text-decoration: none;
+  color: #72bcd4;
+  font-weight: bold;
+  text-align: end;
+  display: flex;
+  align-items: end;
+  padding: 20px;
+}
+.purchasedCourses .image-container a:hover {
+  color: blue;
+}

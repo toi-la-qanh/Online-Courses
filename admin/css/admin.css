@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*thông báo*/
+#message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Điều chỉnh lại để căn giữa chính xác */
+  width: 80%;
+  max-width: 600px;
+  font-size: xx-large;
+  border: 2px solid black;
+  background-color: white;
+  color: #72bcd4;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/*tiêu đề*/
+h1, h2, h3 {
+  font-weight: bold;
+  color: var(--primary-color, #72bcd4);
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-right: 70px;
+}
+
+h2, h3 {
+  margin-top: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/*header*/
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#logo {
+  width: 80px;
+  height: 85px;
+}
+
+#content h2 {
+  margin-top: 200px;
+  text-align: center;
+  font-size: 50px;
+}
+
+#content p {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: gray;
+}
+
+/*các nút*/
+button {
+  background-color: var(--primary-color, #72bcd4);
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: gray;
+}
+
+/*nav*/
+nav {
+  background-color: var(--primary-color, #72bcd4);
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: gray;
+}
+
+/*bảng sản phẩm và đơn hàng*/
+#product-table, #order-table {
+  width: 500vh;
+  /* min-width: 200vh; */
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+#product-table th, #product-table td, #order-table th, #order-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+#product-list img{
+  width: 180px;
+  height: 140px;
+}
+#product-table th, #order-table th {
+  background-color: var(--primary-color, #72bcd4);
+  color: #fff;
+}
+
+#product-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/*hướng dẫn*/
+.admin-guide {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-guide h2 {
+  font-weight: bold;
+  color: var(--primary-color, #72bcd4);
+  margin-bottom: 2px;
+}
+
+.admin-guide ol {
+  list-style: decimal;
+  padding: 0 20px;
+}
+
+.admin-guide li {
+  margin-bottom: 10px;
+}
+
+.admin-guide ol li img {
+  width: 100%;
+  height: auto;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*thêm sản phẩm và đơn hàng*/
+#add-order-form label, #add-product-form label {
+  display: block;
+}
+
+#add-order-form input[type="text"], #add-order-form input[type="number"], #add-order-form input[type="email"], 
+#add-product-form input[type="text"], #add-product-form input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+#add-order-form select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+#add-product-form, #add-order-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+#add-product-form button[type="submit"], #add-order-form button[type="submit"] {
+  background-color: var(--primary-color, #72bcd4);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-product-form button[type="submit"]:hover, #add-order-form button[type="submit"]:hover {
+  background-color: gray;
+}
+
+/*nút sửa và xóa*/
+.edit-btn:hover, .delete-btn:hover {
+  background-color: var(--primary-color, #72bcd4);
+  color: gray;
+}
+/*sửa*/
+.edit-dialog, .add-dialog {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  overflow: auto;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.edit-dialog h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.edit-dialog label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.edit-dialog input[type="text"], .edit-dialog input[type="number"], .edit-dialog input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/*hộp popup*/
+.popup_box, .popup_box_tt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  background: #f2f2f2;
+  text-align: center;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid #b3b3b3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+}
+
+.popup_box i, .popup_box_tt i {
+  font-size: 50px;
+  color: #eb9447;
+  border: 5px solid #eb9447;
+  padding: 20px 40px;
+  border-radius: 50%;
+  margin: -10px 0 20px 0;
+}
+
+.popup_box h1, .popup_box_tt h1 {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 30px;
+  color: #1b2631;
+}
+
+.popup_box label, .popup_box_tt label {
+  font-size: 23px;
+  color: #404040;
+}
+
+.popup_box .btns, .popup_box_tt .btns {
+  margin: 40px 0 0 0;
+}
+
+.popup_box .btns .btn1, .popup_box .btns .btn2, .popup_box_tt .btns .btn2 {
+  background: #999999;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  padding: 10px 13px;
+}
+
+.popup_box .btns .btn2, .popup_box_tt .btns .btn2 {
+  background: #ff3333;
+  border: 1px solid #cc0000;
+}
+
+.btns .btn1:hover {
+  background: #8c8c8c;
+  transition: background-color 0.5s ease;
+}
+
+.btns .btn2:hover {
+  background: #e60000;
+  transition: background-color 0.5s ease;
+}

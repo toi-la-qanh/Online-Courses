@@ -1,0 +1,800 @@
+@font-face {
+  font-family: Be VietNam Pro;
+  src: url(../fonts/BeVietnamPro-Regular.ttf) format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Be VietNam Pro", sans-serif;
+}
+.get-width{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+}
+.show-notification{
+  display: none;
+  position: fixed;
+  z-index: 6;
+  flex-direction: column;
+  background-color: #d5d5d5;
+  border: 2px solid black;
+  line-height: 60px;
+}
+.show-notification #notification{
+  display: flex;
+  align-items:flex-start;
+}
+.show-notification button{
+  width: 100%;
+  background-color: darkgray;
+  border: none;
+  height: 30px;
+  font-weight: bold;
+}
+.show-notification button:hover{
+  background-color: gray;
+}
+/*Thanh trên cùng*/
+.navbar {
+  display: flex;
+  top: 0;
+  position: sticky;
+  z-index: 4;
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid gray;
+}
+/*logo*/
+.navbar .logo {
+  display: inherit;
+  position: relative;
+}
+.navbar .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/*Các khoá học*/
+.navbar .navbar-courses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  font-size: 17px;
+}
+.navbar .navbar-courses button {
+  color: #72bcd4;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  border: none;
+  background-color: inherit;
+}
+.navbar .navbar-courses button i {
+  margin-left: 100px;
+}
+.navbar .navbar-courses:hover ul {
+  display: block;
+}
+.navbar .navbar-courses ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  margin-top: 300px;
+  line-height: 50px;
+  background-color: white;
+  color: #72bcd4;
+  margin-left: 80px;
+  border: 2px solid gray;
+}
+.navbar .navbar-courses ul li {
+  display: flex;
+  width: 300px;
+}
+.navbar .navbar-courses ul li:not(:first-child) {
+  border-top: 2px dotted #72bcd4;
+}
+.navbar .navbar-courses ul li a:hover {
+  color: white;
+  background-color: #72bcd4;
+}
+.navbar .navbar-courses ul li a {
+  text-decoration: none;
+  color: #72bcd4;
+  width: 100%;
+  padding-left: 10px;
+}
+/*Tìm kiếm*/
+.navbar .search-bar {
+  display: flex;
+  /* position: relative; */
+  background: white;
+  border-radius: 10px;
+  width: 300px;
+  height: 30px;
+  justify-content: center;
+  margin-top: 35px;
+  margin-left: 40px;
+}
+.navbar .search-bar form {
+  align-items: center;
+  display: flex;
+  border: 1px solid #72bcd4;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+}
+.navbar .search-bar form input {
+  width: 100%;
+  border: none;
+  outline: 0;
+}
+.navbar .search-bar form input::placeholder {
+  color: #72bcd4;
+}
+.navbar .search-bar span {
+  border: 1px solid #72bcd4;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: none;
+}
+.navbar .search-bar span i {
+  color: #72bcd4;
+}
+.navbar .search-bar span i:hover {
+  color: gray;
+}
+.container-result {
+  width: 100%;
+  position: absolute;
+  top: 65px; 
+  padding-left: 330px;
+}
+#results {
+  display: none;
+  background-color: white;
+  flex-direction: column;
+  width: 300px;
+  color: gray;
+  border: 2px solid gray;
+}
+#results .not-found {
+  padding: 20px;
+  text-align: center;
+  font-size: large;
+}
+#results .data {
+  width: 100%;
+}
+#results .data a .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#results .data a .info p {
+  line-height: 25px;
+}
+#results .data img {
+  width: 100px;
+  height: auto;
+}
+#results .data a {
+  display: flex;
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  height: 126px;
+  gap: 10px;
+}
+#results .data:not(:last-child) {
+  border-bottom: 2px dotted #72bcd4;
+}
+#results a:hover {
+  background-color: #72bcd4;
+  color: white;
+}
+/*Đăng ký/Đăng nhập*/
+.navbar .auth-navbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-left: auto;
+  padding-right: 20px;
+  background: white;
+  width: 180px;
+  height: 40px;
+}
+.navbar .isAuth {
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  text-align: right;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: 10px;
+  background: white;
+  width: 250px;
+}
+.navbar .isAuth span {
+  display: flex;
+  gap: 40px;
+  justify-content: right;
+  font-size: medium;
+  color: #72bcd4;
+  font-weight: bold;
+  width: 100%;
+}
+.navbar .isAuth:hover ul {
+  display: block;
+}
+.navbar .isAuth ul {
+  display: none;
+  top: 70px;
+  margin-left: 50px;
+  width: 200px;
+  position: absolute;
+  list-style: none;
+  line-height: 50px;
+  background-color: white;
+  color: #72bcd4;
+  border: 2px solid gray;
+}
+.navbar .isAuth ul li {
+  display: flex;
+  text-align: left;
+}
+.navbar .isAuth ul li:not(:first-child) {
+  border-top: 2px dotted #72bcd4;
+}
+.navbar .isAuth ul li a:hover {
+  color: white;
+  background-color: #72bcd4;
+}
+.navbar .isAuth ul li a {
+  text-decoration: none;
+  color: #72bcd4;
+  width: 100%;
+  padding-left: 10px;
+}
+.navbar .isAuth .register {
+  display: none;
+}
+.navbar .isAuth .login {
+  display: none;
+}
+.navbar .isAuth form {
+  font-size: medium;
+  width: 100%;
+  height: 55px;
+}
+.navbar .isAuth form .logout {
+  border: none;
+  background-color: inherit;
+  color: #72bcd4;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-left: 10px;
+  font-size: medium;
+  font-family: "Be VietNam Pro", sans-serif;
+}
+.navbar .isAuth ul li .logout:hover {
+  color: white;
+  background-color: #72bcd4;
+}
+.navbar .auth-navbar ul {
+  display: none;
+}
+.navbar .auth-navbar span {
+  display: none;
+}
+.navbar .auth-navbar .logout {
+  display: none;
+}
+.navbar .auth-navbar .register {
+  color: #72bcd4;
+  background: white;
+  border: none;
+  width: 80px;
+  height: 40px;
+  font-weight: bold;
+}
+.navbar .auth-navbar .register:hover {
+  color: gray;
+}
+.navbar .auth-navbar .login {
+  color: white;
+  background: #72bcd4;
+  border: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  border-left: none;
+  font-weight: bold;
+  z-index: 1;
+}
+.navbar .auth-navbar .login:hover {
+  background: gray;
+}
+/*Sản phẩm*/
+.body-container {
+  margin-bottom: 50px;
+}
+.body-container .title {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  border: 0;
+  color: #72bcd4;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.body-container .courses-data .category .category-name {
+  margin: 10px 0 10px 10px;
+  font-weight: 750;
+  color: gray;
+  border-top: 2px solid #72bcd4;
+  border-bottom: 2px solid #72bcd4;
+  padding: 10px;
+}
+.body-container .courses-data .category .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+.body-container .courses-data .category .box-container .box {
+  margin: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #72bcd4;
+  border-radius: 5px;
+  /* text-align: center; */
+  padding: 30px 20px;
+  color: gray;
+}
+.body-container .courses-data .category .box-container .box img {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.body-container .courses-data .category .box-container .box img:hover {
+  transform: scale(1.1);
+  z-index: -1;
+}
+.body-container .courses-data .category .box-container .box h3 {
+  /* padding-bottom: 10px;
+  padding-left: 10px; */
+  text-align: left;
+  height: 70px;
+  line-height: 25px;
+}
+.body-container .courses-data .category .box-container .box p {
+  /* padding-bottom: 10px;
+  padding-left: 10px; */
+  text-align: left;
+  line-height: 40px;
+}
+.body-container .courses-data .category .box-container .box .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  a {
+  width: 100%;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  .free-button {
+  color: white;
+  background: #72bcd4;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  height: 30px;
+  width: 100%;
+  font-size: 15px;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  .free-button:hover {
+  background: gray;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  .purchase-button {
+  color: white;
+  background: #72bcd4;
+  border: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-weight: 700;
+  height: 30px;
+  width: 100%;
+  font-size: 15px;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  a
+  .purchase-button{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  .purchase-button:hover {
+  background: gray;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  a {
+  width: 100%;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .button-container
+  .view-detail-button {
+  color: #72bcd4;
+  background: inherit;
+  border: 1px solid #72bcd4;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-weight: 700;
+  height: 30px;
+  width: 100%;
+  font-size: 15px;
+}
+.body-container
+  .courses-data
+  .category
+  .box-container
+  .box
+  .view-detail-button:hover {
+  background-color: gray;
+  color: white;
+}
+/* Giỏ hàng */
+.cart-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  background-color: white;
+  max-height: 505px;
+  width: 30%;
+  border: 2px dotted #72bcd4;
+  overflow: auto;
+}
+.cart-container .container {
+  margin: 10px 10px 10px 10px;
+  max-height: 100vh;
+  width: 100%;
+}
+.cart-container .container h3 {
+  color: #72bcd4;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cart-container .container h4 {
+  color: gray;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cart-container .container .delete-button {
+  float: right;
+  border: none;
+  background: inherit;
+  color: #72bcd4;
+  font-weight: 700;
+}
+.cart-container .container .delete-button:hover {
+  color: red;
+}
+.cart-container .container .bottom-button {
+  margin-top: 2rem;
+  width: 100%;
+}
+.cart-container .container .bottom-button .cancel-button {
+  width: 50%;
+  border: 2px solid #72bcd4;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: none;
+  background-color: inherit;
+  color: #72bcd4;
+  font-size: medium;
+  height: 30px;
+}
+.cart-container .container .bottom-button .cancel-button:hover {
+  background-color: gray;
+  color: white;
+}
+.cart-container .container .bottom-button .paid-button {
+  width: 50%;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: none;
+  background-color: #72bcd4;
+  color: white;
+  font-size: medium;
+  height: 30px;
+}
+.cart-container .container .bottom-button .paid-button:hover {
+  background-color: gray;
+}
+.cart-container .container .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+.cart-container .container .image-container img {
+  width: 100px;
+  height: 100px;
+}
+.cart-container .container .image-container p {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  font-size: small;
+  line-height: 20px;
+  justify-content: space-between;
+  gap: 5px;
+}
+.cart-container .container .image-container p span input {
+  width: 30px;
+  text-align: center;
+  border: none;
+}
+.cart-container .container .image-container p span .plus-button {
+  border: none;
+  background-color: inherit;
+  color: #72bcd4;
+  font-weight: 900;
+}
+.cart-container .container .image-container p span .plus-button:hover {
+  color: gray;
+}
+.cart-container .container .image-container p span .minus-button {
+  border: none;
+  background-color: inherit;
+  color: #72bcd4;
+  font-weight: 900;
+}
+.cart-container .container .image-container p span .minus-button:hover {
+  color: gray;
+}
+/* Thanh công cụ bên phải */
+.icon-bar-and-arrow {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 160px;
+  z-index: 1;
+}
+.icon-bar-and-arrow .icon-bar ul {
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  border: 2px solid gray;
+}
+.icon-bar-and-arrow .icon-bar ul .login-icon {
+  display: none;
+  list-style: none;
+  width: 50px;
+  height: 70px;
+  z-index: 1;
+}
+.icon-bar-and-arrow .icon-bar ul .question-icon {
+  display: none;
+  list-style: none;
+  width: 50px;
+  height: 70px;
+  z-index: 1;
+}
+.icon-bar ul li {
+  position: relative;
+  list-style: none;
+  width: 50px;
+  height: 70px;
+  z-index: 1;
+}
+.icon-bar ul li button {
+  border: 0;
+  background: inherit;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+}
+.icon-bar ul li .logoutButton {
+  display: flex;
+  margin-right: 14px;
+}
+.icon-bar ul li button .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  text-align: center;
+  transition: 0.5s;
+}
+.icon-bar ul li button .icon i {
+  font-size: 22px;
+  color: #72bcd4;
+}
+.icon-bar ul li button .icon i:hover {
+  color: gray;
+}
+.icon-bar ul li button p {
+  font-size: smaller;
+}
+.icon-bar-and-arrow .right-arrow button {
+  margin-top: 130px;
+  background: inherit;
+  border: 0;
+  font-size: 24px;
+  color: gray;
+}
+.icon-bar-and-arrow .right-arrow button i:hover {
+  color: black;
+}
+.left-arrow button {
+  right: 0;
+  position: fixed;
+  display: flex;
+  top: 290px;
+  background: inherit;
+  border: 0;
+  font-size: 24px;
+  color: gray;
+}
+.left-arrow button i:hover {
+  color: black;
+}
+/*phần chân web*/
+footer {
+  background-color: #72bcd4;
+  color: white;
+  padding: 40px 0;
+  width: 100%;
+  margin-top: auto;
+  /* bottom: 0; */
+}
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .row .column {
+  width: 25%;
+  padding: 0 15px;
+}
+footer .row .column:last-child {
+  padding-left: 100px;
+}
+footer .row .column h4 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+footer .row .column ul {
+  list-style: none;
+}
+footer .row .column ul li {
+  line-height: 30px;
+}
+footer .row .column ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 100;
+  color: white;
+}
+footer .row .column ul li a:hover {
+  color: gray;
+}
+
+@media (max-width: 1000px) {
+  .navbar .auth-navbar {
+    display: none;
+  }
+  .navbar .isAuth {
+    display: none;
+  }
+  footer .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  footer .row .column {
+    width: 100%;
+  }
+  footer .row .column:last-child {
+    padding-left: 15px;
+  }
+  .cart-container {
+    width: 40%;
+  }
+}
+@media (max-width: 700px) {
+  .navbar .navbar-courses {
+    display: none;
+  }
+  .container-result{
+    padding-left: 130px;
+  }
+  .cart-container {
+    width: 60%;
+  }
+}
+@media (max-width: 500px) {
+  .navbar {
+    justify-content: space-between;
+  }
+  .navbar .search-bar {
+    width: 100%;
+  }
+  .container-result{
+    padding-left: 0;
+  }
+  #results{
+    width: 100%;
+  }
+  .navbar .search-bar input {
+    width: 100%;
+  }
+  .cart-container {
+    width: 70%;
+  }
+}

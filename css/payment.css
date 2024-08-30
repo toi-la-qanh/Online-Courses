@@ -1,0 +1,160 @@
+.body-payment {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.body-payment .form-payment {
+  width: 700px;
+  padding: 20px 30px 0 30px;
+  border-radius: 15px;
+  border: 2px solid gray;
+  background-color: white;
+  overflow: auto;
+}
+.body-payment .form-payment .delete-button {
+  display: flex;
+  justify-content: flex-end;
+  /* padding: 10px 10px 0 0; */
+  height: 30px;
+  width: 100%;
+  position: relative;
+  background-color: inherit;
+  border: none;
+  border-radius: 50%;
+}
+.body-payment .form-payment .delete-button i {
+  color: #72bcd4;
+  font-size: x-large;
+}
+.body-payment .form-payment .delete-button i:hover {
+  color: red;
+}
+.body-payment .form-payment .row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.body-payment .form-payment .row .column {
+  flex: 1 1 250px;
+}
+.body-payment .form-payment .row .column .title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #72bcd4;
+}
+.body-payment .form-payment .row .column .payment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.body-payment .form-payment .row .column .payment-content span {
+  width: 100%;
+  padding-left: 10px;
+  line-height: 30px;
+  background-color: #72bcd4;
+  border-radius: 7px;
+}
+.body-payment .form-payment .row .column .payment-content span h4 {
+  font-size: small;
+  /* color: gray; */
+}
+.body-payment .form-payment .row .notice {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.body-payment .form-payment .row .notice h4 {
+  color: #72bcd4;
+  font-size: large;
+}
+.body-payment .form-payment .row .notice .contact {
+  display: flex;
+  justify-content: space-between;
+}
+.body-payment .form-payment .row .notice span {
+  gap: 10px;
+}
+.body-payment .form-payment .row .notice span i {
+  color: #72bcd4;
+}
+/* .body-payment .form-payment .row .column .payment-content span p{} */
+/* .body-payment .form-payment .row .column .input-box span {
+  display: block;
+  margin-bottom: 10px;
+} */
+.body-payment .form-payment .row .column .input-box .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.body-payment .form-payment .row .column .input-box .image-container img {
+  /* margin-right: 10px; */
+  width: 120px;
+  height: 120px;
+  min-height: 120px;
+  border: 1px solid black;
+}
+.body-payment .form-payment .row .column .input-box .image-container p {
+  flex: 1;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 7px 0 7px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+}
+.body-payment
+  .form-payment
+  .row
+  .column
+  .input-box
+  .image-container
+  p
+  .category
+  small {
+  text-decoration: underline;
+}
+.body-payment .form-payment .row .column .money {
+  margin-top: 20px;
+  width: 100%;
+}
+.body-payment .form-payment .row .column .money span {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+.body-payment .form-payment .row .column .guide {
+  font-size: small;
+  margin-top: 20px;
+}
+.body-payment .form-payment .row .column .guide h4{
+  margin-bottom: 10px;
+}
+.body-payment .form-payment .row .column button {
+  width: 100%;
+  border: 1px solid black;
+  background-color: white;
+  color: #72bcd4;
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  height: 30px;
+}
+.body-payment .form-payment .row .column button:hover {
+  background-color: gray;
+  color: white;
+}
+@media (max-width: 700px) {
+  .body-payment .form-payment {
+    width: 100%;
+  }
+}
