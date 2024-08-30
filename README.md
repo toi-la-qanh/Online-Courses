@@ -1,8 +1,13 @@
 ## Responsive Online Courses With Admin Panel
 
 ![Home page](images/homePage.jpg)
+*Home page.*
+
 ![Login](images/loginInterface.jpg)
+*Login interface*
+
 ![View in mobile device](images/700pxView.jpg)
+*The application view on a mobile device, showing a responsive layout.*
 
 Languages: HTML, CSS, PHP, Javascript. USING PURE AND BASIC FOR ALL.
 
