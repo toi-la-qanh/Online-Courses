@@ -77,8 +77,8 @@ $getUser->execute();
     <button onclick="Reload()">Ấn vào đây để tải lại trang</button>
   </div>
 </div>
-<?php require_once("../auth/register/register.php"); ?>
-<?php require_once("../auth/login/login.php"); ?>
-<?php require_once("../payment/payment.php"); ?>
+<?php require_once "../modals/register.php"; ?>
+<?php require_once "../modals/login.php"; ?>
+<?php require_once "../modals/payment.php"; ?>
 <script src="../../js/jquery.js"></script>
 <script src="../../js/script.js"></script>

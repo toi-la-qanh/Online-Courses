@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $status = 422;
   }
   if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $_POST['password'])) {
-    $error['password'] = "Mật khẩu không hợp lệ !";
+    $error['password'] = "Mật khẩu phải ít nhât 8 ký tự, 1 chữ cái viết hoa, 1 chữ thường, và 1 chữ số !";
     $status = 422;
   }
   if ($_POST['password'] != $_POST['Cpassword']) {

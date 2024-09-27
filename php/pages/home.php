@@ -11,9 +11,9 @@
 
 <body>
   <!-- Thanh điều hướng -->
-  <?php require_once("../component/navbar.php"); ?>
+  <?php require_once("../components/navbar.php"); ?>
   <!-- Nút mũi tên bên phải màn hình -->
-  <?php require_once("../component/sidebar.php"); ?>
+  <?php require_once("../components/sidebar.php"); ?>
   <!-- phần thân sau thanh điều hướng -->
   <div class="body-container">
     <?php
@@ -125,6 +125,6 @@
 
 </body>
 <!-- Phần chân -->
-<footer><?php require_once("../component/footer.php"); ?></footer>
+<footer><?php require_once("../components/footer.php"); ?></footer>
 
 </html>

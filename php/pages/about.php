@@ -12,9 +12,9 @@
 
 <body>
   <!-- Thanh điều hướng -->
-  <?php require_once("../component/navbar.php"); ?>
+  <?php require_once "../components/navbar.php"; ?>
   <!-- Nút mũi tên bên phải màn hình -->
-  <?php require_once("../component/sidebar.php"); ?>
+  <?php require_once "../components/sidebar.php"; ?>
   <!-- phần thân sau thanh điều hướng -->
   <div class="body-about">
     <div class="title">GIỚI THIỆU VỀ A8</div>
@@ -96,6 +96,6 @@
   </div>
   <script src="../../js/script.js"></script>
 </body>
-<footer><?php require_once("../component/footer.php"); ?></footer>
+<footer><?php require_once("../components/footer.php"); ?></footer>
 
 </html>

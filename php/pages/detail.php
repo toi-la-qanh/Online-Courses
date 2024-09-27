@@ -30,9 +30,9 @@
 
 <body>
   <!-- Thanh điều hướng -->
-  <?php require_once("../component/navbar.php"); ?>
+  <?php require_once("../components/navbar.php"); ?>
   <!-- Nút mũi tên bên phải màn hình -->
-  <?php require_once("../component/sidebar.php"); ?>
+  <?php require_once("../components/sidebar.php"); ?>
   <!-- Phần thân sau navbar -->
   <div class="body-detail">
     <div class="return-button">
@@ -215,6 +215,6 @@
   <script src="../../js/detail.js"></script>
 </body>
 <!-- Phần chân -->
-<footer><?php require_once("../component/footer.php"); ?></footer>
+<footer><?php require_once("../components/footer.php"); ?></footer>
 
 </html>

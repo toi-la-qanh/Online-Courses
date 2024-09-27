@@ -13,7 +13,7 @@
 
 <body>
   <!-- Thanh điều hướng -->
-  <?php require_once("../component/navbar.php"); ?>
+  <?php require_once("../components/navbar.php"); ?>
   <!-- phần thân sau navbar -->
   <?php
   require_once("../database/sql_connection.php");
@@ -135,11 +135,11 @@
       ?>
     </div>
     <!-- Nút mũi tên bên phải màn hình -->
-    <?php require_once("../component/sidebar.php"); ?>
+    <?php require_once("../components/sidebar.php"); ?>
     <script src="../../js/profile.js"></script>
   </div>
 </body>
 <!-- Phần chân -->
-<footer><?php require_once("../component/footer.php"); ?></footer>
+<footer><?php require_once("../components/footer.php"); ?></footer>
 
 </html>
